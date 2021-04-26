@@ -361,13 +361,14 @@ class DropDownPicker extends React.Component {
 
     getItems(parent = false) {
         const items = this.props.items.filter(item => {
-            return ((parent !== false && item.parent === parent) || parent === false && !item.hasOwnProperty('parent')) && (typeof item.hidden === 'undefined' || item.hidden === false);
+            return ((parent !== false && item.parent === parent) || parent === false && ! item.hasOwnProperty('parent')) && (typeof item.hidden === 'undefined' || item.hidden === false);
         });
 
         if (parent)
             return items;
 
-        if (this.state.searchableText) {
+        const hasCustomSearch = !!this.props.onSearch
+        if (!hasCustomSearch && this.state.searchableText) {
             const text = this.state.searchableText.toLowerCase();
 
             return items.filter((item) => {
