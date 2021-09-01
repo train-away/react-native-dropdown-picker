@@ -466,7 +466,6 @@ class DropDownPicker extends React.Component {
                     (
                         this.state.choice.value === item.value && this.props.activeItemStyle
                     ), {
-                        opacity: item?.disabled ? 0.3 : 1,
                         alignItems: 'center',
                         ...(
                             multiple && {
@@ -555,7 +554,7 @@ class DropDownPicker extends React.Component {
         const isPlaceholderActive = this.state.choice.label === null || (Array.isArray(this.state.choice) && this.state.choice.length === 0);
         const label = isPlaceholderActive ? (placeholder) : this.getLabel(this.state.choice?.label, true);
         const placeholderStyle = isPlaceholderActive && this.props.placeholderStyle;
-        const opacity = disabled ? 0.5 : 1;
+        const opacity = 1;
         const items = this.getItems();
 
         return (
