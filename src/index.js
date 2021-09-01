@@ -466,7 +466,6 @@ class DropDownPicker extends React.Component {
                     (
                         this.state.choice.value === item.value && this.props.activeItemStyle
                     ), {
-                        opacity: item?.disabled ? 0.3 : 1,
                         alignItems: 'center',
                         ...(
                             multiple && {
