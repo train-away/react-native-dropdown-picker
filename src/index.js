@@ -586,7 +586,7 @@ class DropDownPicker extends React.Component {
 
                     {this.state.choice.icon && !multiple && this.state.choice.icon()}
                     <Text style={[
-                        { color: '#000' }, // default label color
+                        { color: '#000', fontWeight: '600' }, // default label color
                         this.props.globalTextStyle,
                         { opacity, flex: 1 }, {
                             marginLeft: (this.props.labelStyle.hasOwnProperty('textAlign') && this.props.labelStyle.textAlign === 'left') || !this.props.labelStyle.hasOwnProperty('textAlign') ? 5 : 0,
